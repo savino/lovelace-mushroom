@@ -29,14 +29,14 @@ export class FanPercentageControl extends LitElement {
 
     return html`
       <mushroom-button
-        class=${classMap({ active: currentDirection === "reverse" })}
+        class=${classMap({ active: currentDirection === "forward" })}
         @click=${this._onTap}
         .disabled=${!active}
       >
         <ha-icon
-          .icon=${currentDirection === "reverse"
-            ? "mdi:rotate-left"
-            : "mdi:rotate-right"}
+          .icon=${currentDirection === "forward"
+            ? "mdi:rotate-right"
+            : "mdi:rotate-left"}
         ></ha-icon>
       </mushroom-button>
     `;
@@ -46,10 +46,6 @@ export class FanPercentageControl extends LitElement {
     return css`
       :host {
         display: flex;
-      }
-      mushroom-button.active {
-        --icon-color: rgb(var(--rgb-state-fan));
-        --bg-color: rgba(var(--rgb-state-fan), 0.2);
       }
     `;
   }
