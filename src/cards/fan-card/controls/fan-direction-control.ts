@@ -29,7 +29,6 @@ export class FanPercentageControl extends LitElement {
 
     return html`
       <mushroom-button
-        class=${classMap({ active: currentDirection === "forward" })}
         @click=${this._onTap}
         .disabled=${!active}
       >
